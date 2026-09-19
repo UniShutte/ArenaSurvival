@@ -24,7 +24,7 @@ namespace ArenaSurvival.Player
 
         [Header("Vertical Movement")]
         [SerializeField, Min(0f)]
-        private float jumpHeight = 1.5f;
+        private float jumpHeight = 5f;
 
         [SerializeField]
         private float gravity = -20f;
