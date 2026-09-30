@@ -26,6 +26,8 @@ namespace ArenaSurvival.Player
         private float cameraPitch;
         private bool isCursorLocked;
 
+        public bool IsCursorLocked => isCursorLocked;
+
         private void Awake()
         {
             inputReader =

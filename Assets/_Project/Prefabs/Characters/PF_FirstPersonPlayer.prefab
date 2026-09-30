@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4513511775036670705}
   - component: {fileID: 5669015048143493491}
   - component: {fileID: 3266161181889543707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6325125722319156314}
   m_Father: {fileID: 7648636885825334904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &4513511775036670705
@@ -151,7 +152,9 @@ GameObject:
   - component: {fileID: 987381166714547010}
   - component: {fileID: 4776872559962365344}
   - component: {fileID: 6625033691982994765}
-  m_Layer: 0
+  - component: {fileID: 5724644246901121113}
+  - component: {fileID: 6818947911434092129}
+  m_Layer: 8
   m_Name: PF_FirstPersonPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -224,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArenaSurvival.Player.PlayerMovement
   walkSpeed: 5
-  sprintSpeed: 8
+  sprintSpeed: 18
   acceleration: 20
   jumpHeight: 1.5
   gravity: -20
@@ -261,3 +264,66 @@ MonoBehaviour:
   maximumPushableMass: 10
   minimumPlayerSpeed: 0.5
   repeatPushDelay: 0.15
+--- !u!114 &5724644246901121113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245289102481349171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63542fed4ad4fb34282868b982bc67c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArenaSurvival.Player.PlayerFallRespawner
+  fallThresholdY: -10
+  safeHeightOffset: 0.2
+--- !u!114 &6818947911434092129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245289102481349171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888c119f33ef5164499657897b6f8447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArenaSurvival.Combat.Weapon
+  projectilePool: {fileID: 0}
+  firePoint: {fileID: 6325125722319156314}
+  playerLook: {fileID: 4776872559962365344}
+  projectileSpeed: 25
+  damage: 25
+  fireInterval: 0.2
+--- !u!1 &8716438703276181948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6325125722319156314}
+  m_Layer: 8
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6325125722319156314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716438703276181948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5474027433896350900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

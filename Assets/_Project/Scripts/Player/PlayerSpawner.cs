@@ -1,4 +1,5 @@
 using UnityEngine;
+using ArenaSurvival.Combat;
 
 namespace ArenaSurvival.Spawning
 {
@@ -16,6 +17,9 @@ namespace ArenaSurvival.Spawning
 
         [SerializeField]
         private Transform spawnPoint;
+
+        [SerializeField]
+        private ProjectilePool projectilePool;
 
         private GameObject spawnedPlayer;
 
@@ -61,6 +65,13 @@ namespace ArenaSurvival.Spawning
 
             spawnedPlayer.name =
                 playerPrefab.name;
+
+            if (spawnedPlayer.TryGetComponent(
+                    out Weapon weapon))
+            {
+                weapon.SetProjectilePool(
+                    projectilePool);
+            }
         }
     }
 }
